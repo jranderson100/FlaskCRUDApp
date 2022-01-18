@@ -60,7 +60,8 @@ def basket():
         
         for item in basket_items:
             cursor.execute (f"INSERT INTO `Basket` (`BasketRef`, `FoodID`) VALUES ('Basket', '{item}');")
-        
+        address = request.form['addressfield']
+        cursor.execute(f"Insert INTO `Basket` (`BasketRef`, `PostalAddress` ) VALUES ('Basket','{address}');")
         dbRoutines.mysql.connection.commit()                                            
         cursor.close()
 
@@ -77,18 +78,23 @@ def basket():
     cursor.execute(f"use webapp_db;")
     cursor.execute('SELECT * FROM Food INNER JOIN Basket ON Food.FoodID = Basket.FoodID;')
     basket_data = cursor.fetchall()
+    cursor.execute('SELECT PostalAddress FROM Basket WHERE PostalAddress IS NOT NULL;')
+    address = cursor.fetchall()
     cursor.close()
 
     baskettype = type(basket)
     
    
     
-    return render_template("basket.html", basket = basket_data, baskettype = baskettype)
+    return render_template("basket.html", basket = basket_data, baskettype = baskettype, address = address)
 
 @app.route('/orderreceived', methods=['GET', 'POST'])
 def orderreceived():
   timestamp = datetime.now(tz=None)
-  
+
+#   POST INSERT new order into ORDERS 
+#GET INFO FROM BASKET AND PUBLISH TOTAL COST...?
+  #ADD NAME AND ADDRESS ON MENU PAGE THEN UPDATE BEFORE YOU SUBMIT ON BASKET PAGE
   return render_template("orderreceived.html", timestamp = timestamp) 
 
 
