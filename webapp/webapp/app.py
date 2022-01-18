@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from datetime import datetime
 from db_routines import DbRoutines
-import json
+import math 
 
 ########################################################
 # TODO: Make server production grade using 'waitress'  #
@@ -80,19 +80,26 @@ def basket():
     basket_data = cursor.fetchall()
     cursor.execute('SELECT PostalAddress FROM Basket WHERE PostalAddress IS NOT NULL;')
     address = cursor.fetchall()
+    cursor.execute('SELECT SUM(FoodPrice) FROM Food INNER JOIN Basket ON Food.FoodID = Basket.FoodID WHERE Basket.FoodID IS NOT NULL;')
+    total_cost_tuple = cursor.fetchall()
     cursor.close()
+    total_cost_dict = total_cost_tuple[0]
+    
+    final_total_cost = math.floor(total_cost_dict['SUM(FoodPrice)'] * 100) / 100.0
 
-    baskettype = type(basket)
     
-   
+   #CALCULATE TOTAL COST AND INSERT IT INTO RENDER TEMPLATE
     
-    return render_template("basket.html", basket = basket_data, baskettype = baskettype, address = address)
+    return render_template("basket.html", basket = basket_data, address = address, final_total_cost = final_total_cost)
 
 @app.route('/orderreceived', methods=['GET', 'POST'])
 def orderreceived():
   timestamp = datetime.now(tz=None)
 
+# IF address bar contains alternative address UPDATE Basket SET PostalAddress = {newenteredaddress} 
+
 #   POST INSERT new order into ORDERS 
+
 #GET INFO FROM BASKET AND PUBLISH TOTAL COST...?
   #ADD NAME AND ADDRESS ON MENU PAGE THEN UPDATE BEFORE YOU SUBMIT ON BASKET PAGE
   return render_template("orderreceived.html", timestamp = timestamp) 
