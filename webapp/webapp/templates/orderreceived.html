@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Main{% endblock %}
+
+{% block style %}
+
+<style>
+
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<h1>Thanks for your order!</h1>
+
+<form action="/">
+    <input type="submit"  value="Order something else" />   
+</form>
+<br />
+<form action="/orders">
+    <input type="submit"  value="Check your order history" />   
+</form>
+{% endblock %}
