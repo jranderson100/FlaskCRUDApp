@@ -35,6 +35,7 @@ CREATE TABLE Basket (
     FoodID int,
     OrderTime varchar(255), 
     Cost float,
+    PostalAddress varchar(1000),
 
     PRIMARY KEY (RowID),
     FOREIGN KEY(FoodID) REFERENCES Food(FoodID)

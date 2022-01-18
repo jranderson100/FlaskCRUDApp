@@ -64,11 +64,15 @@
          {% endfor %}
         </tbody>
        </table>
+       <br />
+       <div class="address-entry"><p> We have your address down as {{address[0].PostalAddress}}. If that's not correct, renter here:   </p><input class="address-text-input" type="text" name="addressfield" value="Re-enter your address here    " /> </div>
+       <button type="submit" class="blue-btn"> Re-enter your address and confirm your order </button>
        <button type="submit" class="green-btn"> Confirm your order </button>
        </form>
     
        <form action="/" method="post">
         <input type="submit" class="red-btn" value="Empty your basket and start again"/>   
+          
     </form>
     
     </div>

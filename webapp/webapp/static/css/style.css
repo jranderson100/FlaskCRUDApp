@@ -1,3 +1,7 @@
+.company-title {
+    color: gold
+}
+
 .foodimage {
     height: 200px;
     width: 200px;
@@ -32,18 +36,33 @@
 }
 
 .red-btn {
-    background-color: lightcoral;
-    border-color: lightcoral;
+    background-color: coral;
+    border-color: coral;
     color: white
 }
 .green-btn {
-    background-color: lightgreen;
-    border-color: lightgreen;
+    background-color: green;
+    border-color: green;
     color: white
+}
+
+.blue-btn {
+    background-color: rgb(80, 80, 184);
+    border-color:  rgb(80, 80, 184);
+    color: white;
 }
 
 .table-container {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.address-entry {
+    display: flex
+}
+
+.address-text-input {
+    margin-left: 50px;
+    width: 500px
 }
