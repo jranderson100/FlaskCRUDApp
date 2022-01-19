@@ -15,13 +15,77 @@
 
 
 
-<h1>Thanks for your order!</h1>
 
-<form action="/">
-    <input type="submit"  value="Order something else" />   
-</form>
+
+
+
+ 
+<div class="table-container">
+    
+    <form action="/orders" method="post">
+      <div class="table">
+        <h1>Thanks for your order!</h1>
+    <table class="basket-table">
+        <thead>
+            <tr>
+                <td></td>
+                <td>Meal</td>
+                <td>Price</td>
+                <td>Calories</td>
+                <td></td>
+                
+            </tr>
+        </thead>
+        <tbody>
+         {% for item in basket %}
+
+                
+         <tr>
+            <td><img class="foodimage" src="../static/images/{{item.FoodImage}}.jpeg" alt="{{item.FoodName}}_image"/></td>
+            <td>{{item.FoodName}}</td>
+            <td>£{{item.FoodPrice}}</td>
+            <td>{{item.FoodCalories}}</td>
+                   
+            
+            </td>
+        </tr>
+    
+    
+    
+    
+         {% endfor %}
+        </tbody>
+       </table>
+       <br />
+       <h1>Total cost: £{{final_total_cost}}</h1>
+       <h1> Ordered at: {{timestamp}}</h1>
+       <h1> We'll be bringing this to {{address[0].PostalAddress}}</h1>
+       
+       <button type="submit" > Check your order history </button>
+       
+       
+       
+          
+    </form>
+    <form action="/">
+        <input type="submit"  value="Order something else" />   
+    </form>
+      
+    </div>
+    </div>
+    <br /> 
+ 
+
+
+
+
+
+
+
+
+
+
+
 <br />
-<form action="/orders">
-    <input type="submit"  value="Check your order history" />   
-</form>
+
 {% endblock %}

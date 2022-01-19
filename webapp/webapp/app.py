@@ -65,12 +65,7 @@ def basket():
         dbRoutines.mysql.connection.commit()                                            
         cursor.close()
 
-    # EDIT BELOW TO SELECT * from Basket 
-    # cursor = dbRoutines.mysql.connection.cursor()
-    # cursor.execute(f"use webapp_db;")
-    # cursor.execute('SELECT * from Basket')
-    # basket_data = cursor.fetchall()
-    # cursor.close()
+    
 
     # Join and select Food and Basket tables to provide data for page
 
@@ -94,7 +89,31 @@ def basket():
 
 @app.route('/orderreceived', methods=['GET', 'POST'])
 def orderreceived():
-  timestamp = datetime.now(tz=None)
+    cursor = dbRoutines.mysql.connection.cursor()
+    cursor.execute(f"use webapp_db;")
+    cursor.execute('SELECT * FROM Food INNER JOIN Basket ON Food.FoodID = Basket.FoodID;')
+    basket_data = cursor.fetchall()
+    
+    if request.form['addressfield'] != "":
+        new_address = request.form['addressfield']
+        cursor.execute(f"UPDATE Basket SET `PostalAddress` = '{new_address}' WHERE `BasketRef` = 'Basket';")
+        dbRoutines.mysql.connection.commit()                                            
+        
+
+    cursor.execute('SELECT PostalAddress FROM Basket WHERE PostalAddress IS NOT NULL;')
+    address = cursor.fetchall()
+    cursor.execute('SELECT SUM(FoodPrice) FROM Food INNER JOIN Basket ON Food.FoodID = Basket.FoodID WHERE Basket.FoodID IS NOT NULL;')
+    total_cost_tuple = cursor.fetchall()
+    cursor.close()
+    total_cost_dict = total_cost_tuple[0]
+    
+    final_total_cost = math.floor(total_cost_dict['SUM(FoodPrice)'] * 100) / 100.0
+    
+    timestamp = datetime.now(tz=None)
+
+    #ADD DATA TO PASS TO ORDERS PAGE
+
+    return render_template("orderreceived.html", timestamp = timestamp, basket = basket_data, final_total_cost = final_total_cost, address = address)
 
 # IF address bar contains alternative address UPDATE Basket SET PostalAddress = {newenteredaddress} 
 
@@ -102,23 +121,12 @@ def orderreceived():
 
 #GET INFO FROM BASKET AND PUBLISH TOTAL COST...?
   #ADD NAME AND ADDRESS ON MENU PAGE THEN UPDATE BEFORE YOU SUBMIT ON BASKET PAGE
-  return render_template("orderreceived.html", timestamp = timestamp) 
 
 
 
 
 
-
-
-@app.route('/confirmorder')
-def confirmorder():
-   pass
-#  FOR EACH ITEM still in basket ITEMS, INSERT FOOD IDs INTO ORDERS TABLE
-
-#     return render_template("orderreceived.html", orders = order_data)
-
-
-@app.route('/orders')
+@app.route('/orders', methods=['GET', 'POST'])
 def orders():
     cursor = dbRoutines.mysql.connection.cursor()
     cursor.execute(f"use webapp_db;")
