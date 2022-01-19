@@ -26,8 +26,12 @@ CREATE TABLE Food (
 
 INSERT into Food (FoodName, FoodPrice, FoodCalories, FoodImage) VALUES ("Special Fried Rice", 6.99, 600, "specialfriedrice");
 INSERT into Food (FoodName, FoodPrice, FoodCalories, FoodImage) VALUES ("Kung Po Chicken", 7.99, 781, "kungpochicken");
-INSERT into Food (FoodName, FoodPrice, FoodCalories, FoodImage) VALUES ("Crispy Wontons", 7.99, 500, "crispywontons");
-INSERT into Food (FoodName, FoodPrice, FoodCalories, FoodImage) VALUES ("Hoisin Duck and Pancakes", 7.99, 500, "duckandpancakes");
+INSERT into Food (FoodName, FoodPrice, FoodCalories, FoodImage) VALUES ("Crispy Wontons", 5.99, 500, "crispywontons");
+INSERT into Food (FoodName, FoodPrice, FoodCalories, FoodImage) VALUES ("Hoisin Duck and Pancakes", 9.99, 800, "duckandpancakes");
+INSERT into Food (FoodName, FoodPrice, FoodCalories, FoodImage) VALUES ("Pork Bao Buns", 6.99, 400, "porkbaobuns");
+INSERT into Food (FoodName, FoodPrice, FoodCalories, FoodImage) VALUES ("King Prawn Rolls", 7.99, 781, "kingprawnrolls");
+INSERT into Food (FoodName, FoodPrice, FoodCalories, FoodImage) VALUES ("Crispy Shredded Chilli Beef", 6.99, 500, "chillibeef");
+INSERT into Food (FoodName, FoodPrice, FoodCalories, FoodImage) VALUES ("Sweet and Sour Chicken", 5.99, 500, "sweetandsourchicken");
 
 CREATE TABLE Basket (
     RowID int NOT NULL AUTO_INCREMENT,
