@@ -5,7 +5,7 @@ pipeline {
 	        stage ('build') {
 	            steps{
 	                echo 'Test stage executed.'
-	                sh 'docker-compose -f /var/lib/jenkins/workspace/FlaskCRUDApp_main/webapp/docker-compose.yml up --build -d'
+	                sh 'docker-compose -f /var/lib/jenkins/workspace/CRUDApp_main/webapp/docker-compose.yml up --build -d'
 	            }
 	        }
 	
