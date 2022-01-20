@@ -30,4 +30,4 @@ def fetch_food_data():
     cursor.close()
 
     if food_data != None:
-        return True
+        return False
