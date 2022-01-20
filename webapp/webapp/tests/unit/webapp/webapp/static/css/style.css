@@ -1,0 +1,97 @@
+.company-title {
+    color: gold
+}
+
+.foodimage {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px
+}
+
+.topnav-icon{
+    height: 100px;
+    width: auto;
+    float: left;
+    display: block
+}
+
+.top-link {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topnav-container {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.topnav-container a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.red-btn {
+    background-color: coral;
+    border-color: coral;
+    color: white
+}
+.green-btn {
+    background-color: green;
+    border-color: green;
+    color: white
+}
+
+.blue-btn {
+    background-color: rgb(80, 80, 184);
+    border-color:  rgb(80, 80, 184);
+    color: white;
+}
+
+.table-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.address-entry {
+    display: flex
+}
+
+.address-text-input {
+    margin-left: 50px;
+    width: 500px
+}
+
+tr, th {
+    padding: 15px;
+    margin: 15px
+}
+
+/* #fancytable {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #fancytable td, #fancytable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #fancytable tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #fancytable tr:hover {background-color: #ddd;}
+  
+  #fancytable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  } */
