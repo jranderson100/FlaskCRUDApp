@@ -16,7 +16,6 @@ app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
 dbRoutines = DbRoutines(app)
 
-is_registed_user = False
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
