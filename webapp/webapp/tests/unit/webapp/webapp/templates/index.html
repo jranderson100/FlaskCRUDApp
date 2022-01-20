@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}Main{% endblock %}
+
+{% block style %}
+
+<style>
+
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div>
+
+    <div class="page-container">
+    
+
+
+
+   <div class="table-container">
+    <div class="table">
+        <h2 class="section-title"> Choose your meals</h2>
+        <br />
+    <form action="/basket" method="post">
+        
+    <table id="fancytable" class="food-selector">
+        <thead>
+            <tr>
+                <td></td>
+                <td>Meal</td>
+                <td>Price</td>
+                <td>Calories</td>
+                <td></td>
+                
+            </tr>
+        </thead>
+        <tbody>
+         {% for food in foods %}
+
+                
+         <tr>
+            <td><img class="foodimage" src="../static/images/{{food.FoodImage}}.jpeg" alt="{{food.FoodName}}_image"/></td>
+            <td>{{food.FoodName}}</td>
+            <td>£{{food.FoodPrice}}</td>
+            <td>{{food.FoodCalories}}</td>
+            <td>Add to basket!<input type="checkbox" name="foodselector" value={{food.FoodID}}>       
+            
+            </td>
+        </tr>
+    
+    
+    
+    
+         {% endfor %}
+        </tbody>
+       </table>
+       <br />
+      <div class="address-entry"> <p>Your address:   </p><input class="address-text-input" type="text" name="addressfield" value="Please enter your address here    " /> </div>
+       <br />
+       <button type="submit"> Add items to your basket </button>
+       </form>
+    </div>
+    </div>
+    <br />
+
+</div>
+
+</div>
+
+{% endblock %}
