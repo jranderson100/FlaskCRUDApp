@@ -15,7 +15,7 @@ pipeline {
 			    sh 'cd webapp'
 			     sh 'ls'
 						
-			    sh 'python3 test_images_test.py'
+			    sh 'python3 webapp/test_images_test.py'
 	            }
 	        }
 	
