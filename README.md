@@ -2,7 +2,7 @@
 
 ## James Anderson (DfECloud2)
 
-**https://github.com/jranderson100/FlaskCRUDApp 
+https://github.com/jranderson100/FlaskCRUDApp 
 
 Diagrams to illustrate this report can be found in the accompanying Project Documentation PDF in the repository.
 
