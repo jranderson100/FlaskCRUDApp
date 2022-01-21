@@ -2,7 +2,7 @@
 
 ## James Anderson (DfECloud2)
 
-https://github.com/jranderson100/FlaskCRUDApp 
+**https://github.com/jranderson100/FlaskCRUDApp 
 
 Diagrams to illustrate this report can be found in the accompanying Project Documentation PDF in the repository.
 
@@ -123,7 +123,7 @@ At the test stage of the Jenkins pipeline, Jenkins runs a unit test to check tha
 
 ## Improvements to be made
 
-More testing
+**More testing
 
 You may see from the “testing” branch of my github repository that I attempted to write unit tests to make a test call to the SQL database. 
 
@@ -141,8 +141,8 @@ Through no fault of our instructor, our introduction to Docker Swarm was some ti
 
 Greater functionality
 
-Then next step is to pass the basket data into a new Orders data, to capture instances of basket objects and provide further opportunity to join rows from different tables to render the data for the user. 
+Then next step is to pass the basket data into a new Orders data, to capture instances of basket objects and provide further opportunity to join rows from different tables to render the data for the user. The "remove this item from the basket" checkboxes on the basket page do not work. A model-based architecture would give me greater flexility here, rather than tying all of my functions to routing.  
 
 Style improvements
 
-My app could be much smarter stylistically, but in the short time frame I was focusing on functionality. 
+My app could be much smarter stylistically, but in the short time frame I was focusing on functionality. My timestamp needs to be reformatted on the order page. 
