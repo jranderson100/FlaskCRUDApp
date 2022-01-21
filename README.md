@@ -1,6 +1,6 @@
-Final Project Report - QA DevOps Bootcamp
+#Final Project Report - QA DevOps Bootcamp
 
-James Anderson (DfECloud2)
+##James Anderson (DfECloud2)
 
 https://github.com/jranderson100/FlaskCRUDApp 
 
@@ -9,7 +9,7 @@ Diagrams to illustrate this report can be found in the accompanying Project Docu
 My video demonstration of the app can be found here. ***
 
 
--Explanation of app and how it fulfils the brief-
+##Explanation of app and how it fulfils the brief-
 
 My web app is the beginning of a food ordering website. The landing page, a Menu Page displays a list of food options, allows the user to make a selection (or selections), enter their address and then proceed to a Basket page. In this Basket page, users can see the total cost of their order and a) empty their basket and start again b) confirm their order or c) update their address and then confirm their order. The next page confirms the details of their order and allows them to return to the Menu page, or to an Order History page which does not yet show information.  The web app achieves the brief’s required CRUD functionality as follows:
 
@@ -27,45 +27,43 @@ Delete - On the Basket page, the user can empty their basket and return to the M
 
 Additionally, the app meets the following requirements as laid out by the brief:
 
-    I have used Docker containers to build and host the application
+I have used Docker containers to build and host the application
 
-    I have built a a CI/CD pipeline using Jenkins to build and test my application, including a webhook to trigger Jenkins to build a new pipeline when I push code to my repository.
+I have built a a CI/CD pipeline using Jenkins to build and test my application, including a webhook to trigger Jenkins to build a new pipeline when I push code to my repository.
 
-    I am using a separate database service (MySQLContainer) which features two tables, Food and Basket (in addition to a fledgling Orders table) which have a relationship
+I am using a separate database service (MySQLContainer) which features two tables, Food and Basket (in addition to a fledgling Orders table) which have a relationship
 
-    I also tested the application using a unittest during the build stage of the Jenkins pipeline.
+I also tested the application using a unittest during the build stage of the Jenkins pipeline.
 
 I have provided the following documentation:
 
-        Fig . 1 -  A diagram of the container architecture of my application
+Fig . 1 -  A diagram of the container architecture of my application
 
-        Fig. 2 - My MoSCoW chart used for planning my application
+Fig. 2 - My MoSCoW chart used for planning my application
 
-        Fig. 3. -  A user journey board featuring user stories to help design the functionality of each page
+Fig. 3. -  A user journey board featuring user stories to help design the functionality of each page
 
-        Fig. 4 -  My Jira board used for planning my project timeline and sprints of development
+Fig. 4 -  My Jira board used for planning my project timeline and sprints of development
 
-        Fig. 5  - An Entity Relationship Diagram (ERD) showing the relationship between rows in my two main tables 
+Fig. 5  - An Entity Relationship Diagram (ERD) showing the relationship between rows in my two main tables 
 
-        Fig. 6 - An ERD for next steps showing how an Orders table would be integrated into the project. 
+Fig. 6 - An ERD for next steps showing how an Orders table would be integrated into the project. 
 
-        Fig. 7 and 8 - Reports for my unittest 
+Fig. 7 and 8 - Reports for my unittest 
         
-        Fig. 9 and 10 - My webhook functionality
+Fig. 9 and 10 - My webhook functionality
 
 
 
-
-
--Technical description of how the app works-
+##Technical description of how the app works-
 
 	
 
-	Setting up and creating the basket page
+###Setting up and creating the basket page
 
-    An instance of the Flask object (called “app”) is created and its relationship to my SQL database is configured.
+An instance of the Flask object (called “app”) is created and its relationship to my SQL database is configured.
 
-    The route (‘/’) is created for the landing/menu page.
+The route (‘/’) is created for the landing/menu page.
 
     This route’s index() function then makes a request to the SQL database selecting all data from the Food table and ensures that the Basket table is empty, using a DELETE statement. 
 
@@ -76,15 +74,14 @@ I have provided the following documentation:
     The user can make food selections and enter their address using a HTML form (checkboxes and a text input). They can then click the ‘Add to basket” button, which reroutes them to the Basket page (‘/basket’). This route’s basket() function inserts the user’s address and the FoodIDs of the selected food items (taken from the value of the checked HTML checkboxes) into the Basket table. The basket items are connected by a common “BasketRef” attribute.
 
 
-Creating the basket page 
+###Creating the basket page 
 
     The basket() function then makes a new request to the SQL database, getting data from both the Food and Basket page, and joining them on FoodID, in order to render the required information to provide the user with a basket. 
 
     A new SQL request is made for the sum of all of the FoodPrice rows which are not NULL. This “total cost” data is passed, along with the other Food and Basket data, into the Basket page (basket.html) render template. 
 
 
-
-	Revising or confirming the order on the basket page 
+###Revising or confirming the order on the basket page 
 
     In the Basket page, the data retrieved from the SQL database is again deconstructed and used to populate the page, including a new total cost value.
 
@@ -105,7 +102,7 @@ Creating the basket page
 
 
 
--A technical description of how the pipeline works-
+##A technical description of how the pipeline works-
 
     Through the Jenkinsfile in the main branch of my Github repository, Jenkins begins the build phase of the pipeline. 
 
@@ -119,12 +116,12 @@ Creating the basket page
 
 
 
--A report on the tests run-
+##A report on the tests run
 
 At the test stage of the Jenkins pipeline, Jenkins runs a unit test to check that the image files are present in the working directory. See Fig. 7 for evidence of the passed test and also Fig. 8 for the test passing in Visual Studio Code.
 
 
--Improvements to be made- 
+##Improvements to be made
 
 More testing
 
