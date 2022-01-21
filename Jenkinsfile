@@ -12,10 +12,7 @@ pipeline {
 	        stage ('test') {
 	            steps{
 	                echo 'Test stage executed.'
-			    sh 'cd webapp'
-			     sh 'ls'
-						
-			    sh 'python3 webapp/webapp/test_images_test.py'
+			    	sh 'python3 webapp/webapp/test_images_test.py'
 	            }
 	        }
 	
