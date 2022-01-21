@@ -34,12 +34,11 @@ def index():
     order_data = cursor.fetchall()
     cursor.close()
     
-    if request.method == "POST":
-        cursor = dbRoutines.mysql.connection.cursor()
-        cursor.execute(f"use webapp_db;")
-        cursor.execute('DELETE FROM Basket;')
-        dbRoutines.mysql.connection.commit()
-        cursor.close()
+    cursor = dbRoutines.mysql.connection.cursor()
+    cursor.execute(f"use webapp_db;")
+    cursor.execute('DELETE FROM Basket;')
+    dbRoutines.mysql.connection.commit()
+    cursor.close()
     
     
 
