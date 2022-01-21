@@ -102,7 +102,7 @@ This is effectively the end of the app’s functionality. They can then click ba
 
 
 
-## A technical description of how the pipeline works-
+## A technical description of how the pipeline works
 
 Through the Jenkinsfile in the main branch of my Github repository, Jenkins begins the build phase of the pipeline. 
 
@@ -116,7 +116,7 @@ I also set up a webhook with Github so that whenever I push new code to my repos
 
 
 
-## A report on the tests run
+## A report on the  tests run
 
 At the test stage of the Jenkins pipeline, Jenkins runs a unit test to check that the image files are present in the working directory. See Fig. 7 for evidence of the passed test and also Fig. 8 for the test passing in Visual Studio Code.
 
