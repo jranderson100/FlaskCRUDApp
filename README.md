@@ -6,7 +6,7 @@ https://github.com/jranderson100/FlaskCRUDApp
 
 Diagrams to illustrate this report can be found in the accompanying Project Documentation PDF in the repository.
 
-My video demonstration of the app can be found here. ***
+My video demonstration of the app can be found here - https://youtu.be/xF3eeeshlkg
 
 
 ## Explanation of app and how it fulfils the brief
