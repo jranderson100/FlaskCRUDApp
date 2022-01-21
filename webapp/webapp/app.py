@@ -24,14 +24,7 @@ def index():
     food_data = cursor.fetchall()
     cursor.close()
 
-    
-
-    cursor = dbRoutines.mysql.connection.cursor()
-    cursor.execute(f"use webapp_db;")
-    cursor.execute('SELECT * from Orders')
-    order_data = cursor.fetchall()
-    cursor.close()
-    
+  
     cursor = dbRoutines.mysql.connection.cursor()
     cursor.execute(f"use webapp_db;")
     cursor.execute('DELETE FROM Basket;')
