@@ -126,7 +126,7 @@ The config details of my database are currently quite public in the main app.py 
 
 ## Improvements to be made
 
-More testing
+More testing 
 
 You may see from the “testing” branch of my github repository that I attempted to write unit tests to make a test call to the SQL database. 
 
@@ -148,4 +148,4 @@ Then next step is to pass the basket data into a new Orders data, to capture ins
 
 Style improvements
 
-My app could be much smarter stylistically, but in the short time frame I was focusing on functionality. My timestamp needs to be reformatted on the order page. 
+My app could be smarter stylistically, but in the short time frame I was focusing on functionality. My timestamp needs to be reformatted on the order page. 
