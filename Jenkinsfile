@@ -14,7 +14,7 @@ pipeline {
 	                echo 'Test stage executed.'
 			    sh 'cd webapp'
 						
-			    sh 'python3 -m test_images_test.py'
+			    sh 'python3 test_images_test.py'
 	            }
 	        }
 	
