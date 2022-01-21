@@ -51,7 +51,7 @@ Fig. 6 - An ERD for next steps showing how an Orders table would be integrated i
 
 Fig. 7 and 8 - Reports for my unittest 
         
-Fig. 9 and 10 - My webhook functionality
+Fig. 9 and 10 - My  webhook functionality
 
 
 
