@@ -21,7 +21,7 @@ pipeline {
 	
 	        stage ('deploy') {
 	            steps{
-	                echo 'Deploy stage executed.'
+	                echo 'Deploy stage to be added.'
 	            }
 	        }
 	    }
