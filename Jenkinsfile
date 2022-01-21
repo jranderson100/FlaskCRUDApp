@@ -13,6 +13,7 @@ pipeline {
 	            steps{
 	                echo 'Test stage executed.'
 			    sh 'cd webapp'
+			     sh 'ls'
 						
 			    sh 'python3 test_images_test.py'
 	            }
