@@ -121,9 +121,12 @@ I also set up a webhook with Github so that whenever I push new code to my repos
 At the test stage of the Jenkins pipeline, Jenkins runs a unit test to check that the image files are present in the working directory. See Fig. 7 for evidence of the passed test and also Fig. 8 for the test passing in Visual Studio Code.
 
 
+## Risk assessment
+The config details of my database are currently quite public in the main app.py page. By using Docker secrets or a similar tech, or placing these in a different file, it would significantly reduce the risk of the database admin details being accessed and used by unintended agents.
+
 ## Improvements to be made
 
-**More testing
+More testing
 
 You may see from the “testing” branch of my github repository that I attempted to write unit tests to make a test call to the SQL database. 
 
